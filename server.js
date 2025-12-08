@@ -14,6 +14,7 @@ import reserveRoutes from './routes/reserve.routes.js';
 import requestRoutes from './routes/request.route.js';
 import reportRoutes from './routes/report.routes.js';
 import logReserveRoutes from './routes/log_reserve.routes.js';
+import stadisticRoutes from './routes/stadistic.route.js';
 
 dotenv.config();
 
@@ -48,6 +49,8 @@ app.use('/request/', requestRoutes)
 app.use('/report/', reportRoutes)
 //Route para Gestions Historial Reservas
 app.use('/log/reserve/', logReserveRoutes)
+//Route para Gestion Estadisticas
+app.use('/stadistics', stadisticRoutes)
 
 app.use('/reference', apiReference({
       spec: {
