@@ -84,8 +84,8 @@ export const valuesByMonth = async() => {
             SELECT 
                 EXTRACT(YEAR FROM init_date) AS year,
                 EXTRACT(MONTH FROM init_date) AS month,
-                SUM(total_value) AS total_sum
-            FROM LOG_RESERVATION
+                COUNT(ID_REQUEST) AS NoSolicitud
+            FROM REQUEST
             GROUP BY 
                 EXTRACT(YEAR FROM init_date),
                 EXTRACT(MONTH FROM init_date)
