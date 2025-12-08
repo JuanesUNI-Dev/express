@@ -88,13 +88,15 @@ const AuthController = {
             res.cookie("access_token", token, {
             httpOnly: true, 
             secure: true,         // obligatorio en producción (https)
-            sameSite: "none"    // permite enviar cookies cross-site
+            sameSite: "none",    // permite enviar cookies cross-site
+            path: "/"
             });
 
             res.cookie("refresh_token", refreshToken, {
             httpOnly: true,
             secure: true,
-            sameSite: "none"
+            sameSite: "none",
+            path: "/"
             });
             //Reporte de Acceso Exitoso
             return res.status(200).send({auth: true})
@@ -118,7 +120,8 @@ const AuthController = {
             res.cookie("access_token", token, {
             httpOnly: true,
             secure: true,         // obligatorio en producción (https)
-            sameSite: "none"    // permite enviar cookies cross-site
+            sameSite: "none",
+            path: "/"
             });
             //Retornar Respuesta
             return res.status(200).send({message: "Access token renovado"})
