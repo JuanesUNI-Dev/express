@@ -129,8 +129,19 @@ const AuthController = {
     logout : async(req, res) => {
         try {
             //Limpiar las Cookies
-            res.clearCookie("access_token");
-            res.clearCookie("refresh_token");
+            res.clearCookie("access_token", {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none",
+            path: "/"      // IMPORTANTE: ¡coincidir!
+        });
+
+        res.clearCookie("refresh_token", {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none",
+            path: "/"
+        });
             //Retornar Respuesta
             return res.status(200).send({message: "Sesión cerrada"})
         } catch (error) {
