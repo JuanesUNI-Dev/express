@@ -1,7 +1,7 @@
 import pool from "../lib/db.js";
 import { errorHandler } from "../util/errorHandler.js";
 
-export const valuesByDate = async() => {
+export const valuesByDate = async() => { //
     try {
         const result = await pool.query(
             `
@@ -23,7 +23,7 @@ export const valuesByDate = async() => {
         errorHandler(error)
     }
 }
-export const totalsales = async() => {
+export const totalsales = async() => { //
     try {
         const result = await pool.query(
             `
@@ -38,7 +38,7 @@ export const totalsales = async() => {
         errorHandler(error)
     }
 }
-export const reserveBySpace = async() => {
+export const reserveBySpace = async() => { //
     try {
         const result = await pool.query(
             `
@@ -55,7 +55,7 @@ export const reserveBySpace = async() => {
         errorHandler(error)
     }
 }
-export const reserveByDate = async() => {
+export const reserveByDate = async() => { //
     try {
         const result = await pool.query(
             `
@@ -77,7 +77,7 @@ export const reserveByDate = async() => {
         errorHandler(error)
     }
 }
-export const valuesByMonth = async() => {
+export const valuesByMonth = async() => { //
     try {
         const result = await pool.query(
             `
@@ -99,7 +99,7 @@ export const valuesByMonth = async() => {
         errorHandler(error)
     }
 }
-export const requestBySpace = async() => {
+export const requestBySpace = async() => { //
     try {
         const result = await pool.query(
             `
@@ -119,7 +119,7 @@ export const requestBySpace = async() => {
         errorHandler(error)
     }
 }
-export const requestByDate = async() => {
+export const requestByDate = async() => { //
     try {
         const result = await pool.query(
             `
