@@ -11,7 +11,7 @@ export const requestRegisterSchema = z.object({
 	v_init_date: z.coerce.date(),
 	v_end_date: z.coerce.date(),
 	v_fk_rate : z.number().int().positive(),
-	v_value: z.number().positive()
+	v_value: z.number().nonnegative()
 }).strict()
 
 export const updateStatusSchema = z.object({
