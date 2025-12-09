@@ -1,5 +1,5 @@
 import Express from 'express';
-import { verifyRol } from '../middleware/rolAccess.js';
+import { verifyToken } from '../middleware/verifyToken.js';
 import { reportController } from "../controller/report.controller.js";
 
 const router = Express.Router();
@@ -31,6 +31,6 @@ const router = Express.Router();
  *       500:
  *         description: Error interno del servidor.
  */
-router.get('/export', verifyRol, reportController.export);
+router.get('/export', verifyToken, reportController.export);
 
 export default router
