@@ -174,7 +174,7 @@ router.get("/refresh", AuthController.refresh);
  *             example:
  *               error: "Error interno"
  */
-router.get("/logout", AuthController.logout);
+router.post("/logout", AuthController.logout);
 
 /**
  * @swagger
