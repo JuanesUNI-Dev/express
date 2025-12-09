@@ -5,7 +5,7 @@ import { errorHandler } from "../util/errorHandler.js";
 export const logReservationGet = async() => {
     try {
         const result = await pool.query(
-            "SELECT * FROM log_reservation ORDER BY INIT_DATE;"
+            "SELECT * FROM log_reservation ORDER BY INIT_DATE DESC;"
         );
         return result.rows;
     } catch (error) {

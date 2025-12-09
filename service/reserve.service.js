@@ -93,7 +93,7 @@ export const reserveDelete = async(v_id_reservation) => {
 export const reserveGet = async() => {
     try {
         const result = await pool.query(
-            'SELECT * FROM RESERVATION;'
+            'SELECT * FROM RESERVATION ORDER BY INIT_DATE DESC;'
         );
         return result.rows
     } catch (error) {
