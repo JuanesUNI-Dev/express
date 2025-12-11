@@ -19,7 +19,7 @@ export const requestController = {
             //Obtener Nombre de Tarifa por medio del Id de la tarifa
             const v_nameRate = await nameRateById(v_fk_rate);
             //Obtener Email de Administrador
-            const v_emailAdmin = await getAdminEmployee();  
+            const v_emailAdmin = await getAdminEmployee();
             //Envio de Notificacion Via Email
             //Llamado al servicio de Creacion de Transportador
             const transporter = await transporterGmail();

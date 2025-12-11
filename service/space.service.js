@@ -69,7 +69,13 @@ export const spaceget = async() => {
 export const spaceNameByRate = async(id_rate) => {
     try {
         const result = await pool.query(
-            'SELECT name FROM get_spaces WHERE id_rate = ($1) LIMIT 1;',
+            `
+            SELECT 
+            s.name
+            FROM RATE AS R
+            JOIN space s ON r.fk_space = s.id_space
+            WHERE r.id_rate = ($1);
+            `,
             [id_rate]
         );
         return result.rows[0]
